@@ -28,6 +28,20 @@ export default function Card({ id, image, title, totalEpisodes }) {
       <p className={styles.episode}>
         {totalEpisodes ? `EPS ${totalEpisodes}` : `Upcoming`}
       </p>
+      <div className={styles.episode_stats}>
+       <button>
+        <FaClosedCaptioning />
+       </button>
+      <p>{bored.sub_episodes.length}</p>
+      </div>
+      {bored.dub_episodes.length > 0 && (
+        <div className={styles.episode_stats}>
+          <button>
+            <TbMicrophoneFilled />
+          </button>
+          <p>{bored.dub_episodes.length}</p>
+        </div>
+      )}
     </Link>
   );
 }
